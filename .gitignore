@@ -1,0 +1,56 @@
+﻿# Python environment and cache
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local databases and user data
+backend/*.db
+backend/*.db-*
+*.sqlite
+*.sqlite3
+
+# Datasets and downloaded archives
+braintumour/
+braintumour_cleaned/
+*.zip
+
+# Frontend dependencies and build output
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# IDE and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Experimental model artifacts and temporary output
+brain_tumor_cnn.keras
+brain_tumor_cnn_augmented.keras
+efficientnet_best.weights.h5
+
+# Generated evaluation and diagnostic outputs
+glioma_error_analysis/
+misclassified_images/
+
+# Local logs and temporary files
+*.log
+*.tmp
+
+# Vite and other generated frontend files
+dist/
+
+# Generated evaluation images in project root only
+/augmented_confusion_matrix.png
+/confusion_matrix*.png
+/light_aug_training_accuracy.png
+/mobilenet_confusion_matrix.png
+/mobilenet_training_accuracy.png
