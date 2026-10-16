@@ -19,9 +19,18 @@ DATABASE_PATH = BACKEND_DIR / "history.db"
 
 app = FastAPI(title="Brain Tumor Detection API")
 
+FRONTEND_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "FRONTEND_ORIGINS",
+        "http://localhost:5173",
+    ).split(",")
+    if origin.strip()
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=FRONTEND_ORIGINS,
     allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["*"],
 )
